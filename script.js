@@ -376,13 +376,13 @@ function initResultsSection() {
 
 function animateCounters() {
     // Animate participants count
-    animateCounter('participants-count', 0, 127, 2000, '');
+    animateCounter('participants-count', 0, 608, 2000, '');
     
     // Animate stations count
-    animateCounter('stations-active', 0, 4, 1500, '');
+    animateCounter('stations-active', 0, 4, 1000, '');
     
     // Animate kilometers traveled
-    animateCounter('kilometers-traveled', 0, 15420, 2000, '');
+    animateCounter('kilometers-traveled', 0, 0, 1000, '');
 }
 
 function animateCounter(elementId, start, end, duration, suffix) {
@@ -417,9 +417,9 @@ function loadPowerBIData() {
     // For now, we'll use mock data that can be replaced with real API calls
     
     const mockData = {
-        participants: 127,
+        participants: 608,
         stations: 4,
-        kilometersTraveled: 15420
+        kilometersTraveled: 0
     };
     
     // Update counters with real data if available
