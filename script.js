@@ -376,7 +376,7 @@ function initResultsSection() {
 
 function animateCounters() {
     // Animate participants count
-    animateCounter('participants-count', 0, 608, 2000, '');
+    animateCounter('participants-count', 0, 636, 2000, '');
     
     // Animate stations count
     animateCounter('stations-active', 0, 4, 1000, '');
@@ -417,7 +417,7 @@ function loadPowerBIData() {
     // For now, we'll use mock data that can be replaced with real API calls
     
     const mockData = {
-        participants: 608,
+        participants: 636,
         stations: 4,
         kilometersTraveled: 0
     };
