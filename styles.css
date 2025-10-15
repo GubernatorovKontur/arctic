@@ -23,6 +23,14 @@
     font-display: swap;
 }
 
+@font-face {
+    font-family: 'Bounded Variable';
+    src: url('Bounded-Variable.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
 /* Reset and Base Styles */
 * {
     margin: 0;
@@ -1047,8 +1055,12 @@ section:not(:last-child)::after {
 .tip-card p {
     color: var(--snow-white);
     font-size: 0.95rem;
-    font-family: 'Bounded', 'Arial', 'Helvetica', 'Segoe UI', 'Roboto', sans-serif;
+    font-family: 'Bounded Variable', 'Bounded', 'Arial', 'Helvetica', 'Segoe UI', 'Roboto', sans-serif;
     font-weight: 400;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-smooth: always;
 }
 
 /* Prizes Section */
