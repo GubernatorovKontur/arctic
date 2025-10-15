@@ -63,8 +63,8 @@ input, textarea, [contenteditable] {
     --text-muted: #7A8B9A;
     
     /* Typography */
-    --font-primary: 'Bounded', sans-serif;
-    --font-display: 'Bounded', sans-serif;
+    --font-primary: 'Bounded', 'Arial', 'Helvetica', sans-serif;
+    --font-display: 'Bounded', 'Arial', 'Helvetica', sans-serif;
     --font-weight-light: 200;
     --font-weight-regular: 400;
     --font-weight-black: 900;
@@ -1047,7 +1047,7 @@ section:not(:last-child)::after {
 .tip-card p {
     color: var(--snow-white);
     font-size: 0.95rem;
-    font-family: var(--font-primary);
+    font-family: 'Bounded', 'Arial', 'Helvetica', 'Segoe UI', 'Roboto', sans-serif;
 }
 
 /* Prizes Section */
@@ -1602,7 +1602,7 @@ section:not(:last-child)::after {
     .tip-card p {
         font-size: 0.95rem;
         line-height: 1.4;
-        font-family: var(--font-primary);
+        font-family: 'Bounded', 'Arial', 'Helvetica', 'Segoe UI', 'Roboto', sans-serif;
     }
     
     .subtitle-divider {
@@ -1913,7 +1913,7 @@ section:not(:last-child)::after {
     .tip-card p {
         font-size: 0.9rem;
         line-height: 1.4;
-        font-family: var(--font-primary);
+        font-family: 'Bounded', 'Arial', 'Helvetica', 'Segoe UI', 'Roboto', sans-serif;
     }
     
     .results-grid {
