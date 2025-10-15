@@ -1047,6 +1047,7 @@ section:not(:last-child)::after {
 .tip-card p {
     color: var(--snow-white);
     font-size: 0.95rem;
+    font-family: var(--font-primary);
 }
 
 /* Prizes Section */
@@ -1601,6 +1602,7 @@ section:not(:last-child)::after {
     .tip-card p {
         font-size: 0.95rem;
         line-height: 1.4;
+        font-family: var(--font-primary);
     }
     
     .subtitle-divider {
@@ -1911,6 +1913,7 @@ section:not(:last-child)::after {
     .tip-card p {
         font-size: 0.9rem;
         line-height: 1.4;
+        font-family: var(--font-primary);
     }
     
     .results-grid {
