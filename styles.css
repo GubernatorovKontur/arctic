@@ -1063,6 +1063,15 @@ section:not(:last-child)::after {
     font-smooth: always;
 }
 
+/* CSS fallback для случаев, когда JavaScript не работает */
+@media screen and (min-resolution: 96dpi) and (max-resolution: 97dpi) {
+    .tip-card p {
+        font-family: 'Arial', 'Helvetica', 'Segoe UI', 'Roboto', sans-serif !important;
+        font-size: 0.96rem;
+        letter-spacing: 0.01em;
+    }
+}
+
 /* Prizes Section */
 .prizes {
     background: linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, rgba(0, 245, 212, 0.1) 100%);
