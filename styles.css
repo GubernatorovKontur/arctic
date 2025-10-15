@@ -1048,6 +1048,7 @@ section:not(:last-child)::after {
     color: var(--snow-white);
     font-size: 0.95rem;
     font-family: 'Bounded', 'Arial', 'Helvetica', 'Segoe UI', 'Roboto', sans-serif;
+    font-weight: 400;
 }
 
 /* Prizes Section */
