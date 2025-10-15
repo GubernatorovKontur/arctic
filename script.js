@@ -478,6 +478,60 @@ function initBackgroundRotation() {
     });
 }
 
+// Font fix for zoom level detection
+function initFontZoomFix() {
+    function detectZoom() {
+        // Несколько способов определения масштаба
+        const zoom1 = Math.round(window.outerWidth / window.innerWidth * 100) / 100;
+        const zoom2 = window.devicePixelRatio;
+        const zoom3 = Math.round(screen.width / window.innerWidth * 100) / 100;
+        
+        // Выбираем наиболее подходящий способ
+        const zoom = Math.abs(zoom1 - 1.0) < Math.abs(zoom2 - 1.0) ? zoom1 : zoom2;
+        
+        const tipCards = document.querySelectorAll('.tip-card p');
+        
+        console.log('Zoom detection:', { zoom1, zoom2, zoom3, selected: zoom });
+        
+        tipCards.forEach(card => {
+            // Проверяем, действительно ли это 100% масштаб
+            if (Math.abs(zoom - 1.0) < 0.1) {
+                // При 100% масштабе используем системный шрифт
+                card.style.fontFamily = 'Arial, Helvetica, Segoe UI, Roboto, sans-serif';
+                card.style.fontSize = '0.96rem';
+                card.style.letterSpacing = '0.01em';
+                card.classList.add('zoom-100-font');
+                console.log('Applied system font for 100% zoom');
+            } else {
+                // При других масштабах используем Bounded
+                card.style.fontFamily = 'Bounded Variable, Bounded, Arial, Helvetica, Segoe UI, Roboto, sans-serif';
+                card.style.fontSize = '0.95rem';
+                card.style.letterSpacing = 'normal';
+                card.classList.remove('zoom-100-font');
+                console.log('Applied Bounded font for zoom:', zoom);
+            }
+        });
+    }
+    
+    // Проверяем при загрузке с задержкой
+    setTimeout(detectZoom, 200);
+    
+    // Проверяем при изменении размера окна
+    window.addEventListener('resize', () => {
+        setTimeout(detectZoom, 100);
+    });
+    
+    // Дополнительная проверка через MutationObserver
+    const observer = new MutationObserver(() => {
+        const tipCards = document.querySelectorAll('.tip-card p:not(.zoom-100-font)');
+        if (tipCards.length > 0) {
+            detectZoom();
+        }
+    });
+    
+    observer.observe(document.body, { childList: true, subtree: true });
+}
+
 // Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     // Add notification styles
@@ -495,6 +549,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initParallaxEffect();
     initBackgroundMusic(); // Initialize background music
     initResultsSection(); // Initialize results section with animated counters
+    initFontZoomFix(); // Initialize font zoom fix
     
     // Add loading animation
     document.body.style.opacity = '0';
